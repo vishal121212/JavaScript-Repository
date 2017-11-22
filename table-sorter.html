@@ -26,10 +26,10 @@
             <tbody>
                 <tr class="sorter-header">
                     
-                    <th title="case insensitive sort" class="ascending">First</th> 
-                    <th title="case sensitive sort" class="case-sensitive">CS</th>
+                    <th title="case insensitive sort" class="ascending">Id</th> 
+                    <th title="case sensitive sort" class="case-sensitive">Name</th>
                   
-                    <th title="case insensitive sort" class="">CI</th>
+                    <th title="case insensitive sort" class="">Email</th>
 					<th title="sort by date" class="is-date">Date</th>
                 </tr>
                 
@@ -61,7 +61,7 @@
   var tr;
         for (var i = 0; i < response.length; i++) {
             tr = $('<tr/>');
-			tr.append("<td>" + response[i].commit.author.id + "</td>");
+			tr.append("<td>" + response[i].sha + "</td>");
             tr.append("<td>" + response[i].commit.author.name + "</td>");
             tr.append("<td>" + response[i].commit.author.email + "</td>");
             tr.append("<td>" + response[i].commit.author.date + "</td>"); 
