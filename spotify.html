@@ -37,7 +37,7 @@
   <thead>
     <tr>
       <th   data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Sort by ASCENDING/DESCENDING order"  onclick="sortTable(0)">User Id</th>
-      <th  >Id</th>
+      <th  onclick="sortTable(1)">Id</th>
       <th  >Title</th>
       <th  >Description</th>
 	  
@@ -117,15 +117,15 @@ function sortTable(n) {
   $.ajax({
   type:"GET",
   dataType: "json",
-  url: "https://jsonplaceholder.typicode.com/posts",
+  url: "https://jsonplaceholder.typicode.com/comments?postId=1",
    
  success : function(response) {
   var tr;
         for (var i = 0; i < response.length; i++) {
             tr = $('<tr/>');
-            tr.append("<td>" + response[i].userId + "</td>");
             tr.append("<td>" + response[i].id + "</td>");
-            tr.append("<td>" + response[i].title + "</td>");
+            tr.append("<td>" + response[i].name + "</td>");
+            tr.append("<td>" + response[i].email + "</td>");
 			 tr.append("<td>" + response[i].body + "</td>");
             $('table').append(tr);
         }
